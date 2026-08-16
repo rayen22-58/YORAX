@@ -14,10 +14,10 @@ const productsData = [
         category: "Hoodies",
         price: 89.00,
         originalPrice: 110.00,
-        image: "images/products/hoodie-1.jpg",
+        image: "ChaseRBack.jpg",
         images: [
-            "images/products/hoodie-1.jpg",
-            "images/products/hoodie-1-back.jpg"
+            "    ChaseRBack.jpg",
+            "ChaseRFace.jpg"
         ],
         specs: [
             "Coton 100% Ultra-Lourd Premium (400 GSM)",
@@ -32,9 +32,9 @@ const productsData = [
         category: "Hoodies",
         price: 95.00,
         originalPrice: 120.00,
-        image: "images/products/hoodie-2.jpg",
+        image: "DarkAngle.jpg",
         images: [
-            "images/products/hoodie-2.jpg"
+            "DarkAngle.jpg"
         ],
         specs: [
             "Coton Molletonné Épais",
