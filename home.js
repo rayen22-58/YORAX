@@ -127,12 +127,28 @@ function initModalEvents() {
     });
 
     // Direct WhatsApp inside Preview
-    document.getElementById('modalDirectWhatsAppBtn').addEventListener('click', () => {
-        if (selectedPreviewProduct) {
-            const msg = encodeURIComponent(`Bonjour YORAX, je souhaite commander directement:\n- Produit: ${selectedPreviewProduct.name}\n- Taille: ${currentSelectedSize}\n- Prix: ${selectedPreviewProduct.price.toFixed(2)} TND`);
-            window.open(`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${msg}`, '_blank');
-        }
-    });
+  // 1. تثبيت رقم الهاتف بصيغة تونس الصحيحة (بدون + وبدون مسافات)
+const brandPhone = "42463318"; // بدّل 99000000 برقمك التونسي المتكون من 8 أرقام
+
+// 2. الكود الخاص بزر الـ WhatsApp المباشر داخل الـ Preview Modal
+document.getElementById('modalDirectWhatsAppBtn').addEventListener('click', () => {
+    // جلب اسم المنتج والمقاس المختار من الـ Modal
+    const title = document.getElementById('modalTitle').innerText;
+    const price = document.getElementById('modalPrice').innerText;
+    const size = document.getElementById('selectedSizeLabel').innerText;
+
+    // صياغة الرسالة الموجهة للبراند
+    const message = `Bonjour YORAX, je souhaite commander directement :
+- Produit : ${title}
+- Taille : ${size}
+- Prix : ${price}`;
+
+    // تكوين الرابط المتوافق تماماً مع التليفونات والتطبيقات
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${brandPhone}&text=${encodeURIComponent(message)}`;
+
+    // فتح تطبيق الواتساب
+    window.open(whatsappUrl, '_blank');
+});
 
     // Cart Drawer Toggle
     document.getElementById('cartToggleBtn').addEventListener('click', toggleCartDrawer);
