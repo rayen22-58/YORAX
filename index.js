@@ -20,9 +20,9 @@ const PRODUCTS_DATABASE = [
         category: "T-Shirts",
         price: 49.00,
         originalPrice: 65.00,
-        mainImage: "assets/mockup/hoodie/ChaseRBack.jpg",
+        mainImage: "ChaseRBack.jpg",
         gallery: [
-            "assets/mockup/hoodie/ChaseRFace.jpg",
+            "ChaseRFace.jpg",
             
         ],
         specs: [
@@ -39,10 +39,10 @@ const PRODUCTS_DATABASE = [
         category: "Hoodies",
         price: 99.00,
         originalPrice: 125.00,
-        mainImage: "assets/mockup/hoodie/DarkAngle.jpg",
+        mainImage: "DarkAngle.jpg",
         gallery: [
-            "images/hoodie-black-1.jpg",
-            "images/hoodie-black-2.jpg"
+            "DarkAngle.jpg",
+          
         ],
         specs: [
             "Grammage : 400 GSM Ultra-dense Fleece",
@@ -58,9 +58,9 @@ const PRODUCTS_DATABASE = [
         category: "Sweatshirts",
         price: 79.00,
         originalPrice: 95.00,
-        mainImage: "assets/mockup/hoodie/DeadInternetBack.jpg",
+        mainImage: "DeadInternetBack.jpg",
         gallery: [
-            "assets/mockup/hoodie/DeadInternetFace.jpg"
+            "DeadInternetFace.jpg"
         ],
         specs: [
             "Grammage : 350 GSM Coton Doux",
@@ -76,9 +76,9 @@ const PRODUCTS_DATABASE = [
         category: "T-Shirts",
         price: 49.00,
         originalPrice: 60.00,
-        mainImage: "assets/mockup/hoodie/Discipline.jpg",
+        mainImage: "Discipline.jpg",
         gallery: [
-            "assets/mockup/hoodie/Discipline.jpg"
+            "Discipline.jpg"
         ],
         specs: [
             "Grammage : 240 GSM Heavy Coton Blanc",
@@ -93,9 +93,9 @@ const PRODUCTS_DATABASE = [
         category: "Hoodies",
         price: 109.00,
         originalPrice: 135.00,
-        mainImage: "assets/mockup/hoodie/EnjoyTheSilence.jpg",
+        mainImage: "EnjoyTheSilence.jpg",
         gallery: [
-            "assets/mockup/hoodie/EnjoyTheSilence.jpg"
+            "EnjoyTheSilence.jpg"
         ],
         specs: [
             "Grammage : 420 GSM Acid Wash Custom",
@@ -110,9 +110,9 @@ const PRODUCTS_DATABASE = [
         category: "Accessories",
         price: 29.00,
         originalPrice: 38.00,
-        mainImage: "assets/mockup/hoodie/StormNight.jpg",
+        mainImage: "StormNight.jpg",
         gallery: [
-            "assets/mockup/hoodie/StormNight.jpg"
+            "StormNight.jpg"
         ],
         specs: [
             "Matière : Maille 100% Acrylique douce",
