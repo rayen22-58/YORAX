@@ -157,7 +157,7 @@ body {
     position: relative;
     padding: 120px 20px;
     text-align: center;
-    background-image: url('assets/logo/RY.png'); /* اسم تصويرة بطاقة البراند */
+    background-image: url('RY.png'); /* اسم تصويرة بطاقة البراند */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
