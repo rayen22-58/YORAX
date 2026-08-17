@@ -37,6 +37,9 @@
 
             <!-- Header Actions -->
             <div class="header-actions">
+                <button class="icon-btn" id="loginToggleBtn" title="Mon Compte">
+                    <i class="fa-regular fa-user"></i>
+                </button>
                 <button class="icon-btn" id="cartToggleBtn" title="Mon Panier">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-badge" id="cartCountBadge">0</span>
@@ -57,7 +60,7 @@
 
     <!-- Main Container -->
     <main class="main-content">
-        <!-- Category Filter Pills (Tous / Hoodies فقط) -->
+        <!-- Category Filter Pills (Tous / Hoodies) -->
         <div class="categories-bar">
             <button class="category-pill active" data-category="Tous">Tous</button>
             <button class="category-pill" data-category="Hoodies">Hoodies</button>
@@ -70,7 +73,7 @@
                 <span id="productResultsCount" class="results-count">0 Produits</span>
             </div>
             <div class="product-grid" id="productGrid">
-                <!-- Dynamic Products Loaded via JavaScript -->
+                <!-- Dynamic Products -->
             </div>
         </section>
     </main>
@@ -86,6 +89,13 @@
             <!-- Dynamic Cart Items -->
         </div>
         <div class="cart-drawer-footer">
+            <!-- Customer Delivery Info Fields -->
+            <div class="checkout-fields" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+                <input type="text" id="custName" placeholder="Prénom & Nom (الاسم واللقب)" style="width:100%; background:#141414; border:1px solid #262626; color:#fff; padding:8px 12px; border-radius:4px; font-size:12px;" required>
+                <input type="text" id="custAddress" placeholder="Adresse & Ville (العنوان والولاية)" style="width:100%; background:#141414; border:1px solid #262626; color:#fff; padding:8px 12px; border-radius:4px; font-size:12px;" required>
+                <input type="tel" id="custPhone" placeholder="Numéro Téléphone (رقم الهاتف)" style="width:100%; background:#141414; border:1px solid #262626; color:#fff; padding:8px 12px; border-radius:4px; font-size:12px;" required>
+            </div>
+
             <div class="summary-line">
                 <span>Sous-total:</span>
                 <span id="cartSubtotalText">0.00 TND</span>
@@ -104,29 +114,31 @@
         </div>
     </aside>
 
-    <!-- 1. Welcome Card Overlay Modal -->
-    <div class="modal-overlay" id="welcomeModal">
-        <div class="modal-card welcome-card">
-            <button class="modal-close" id="closeWelcomeBtn"><i class="fa-solid fa-xmark"></i></button>
-            <div class="welcome-badge">WELCOME TO YORAX</div>
-            <h2 class="welcome-title">THE BLACK WOLF</h2>
-            <p class="welcome-text">Découvrez notre nouvelle collection streetwear minimaliste & oversized 2026.</p>
-            <button class="btn-primary" id="exploreCollectionBtn">EXPLORE COLLECTION</button>
+    <!-- Login / Register Modal Overlay -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card login-card">
+            <button class="modal-close" id="closeLoginBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="welcome-badge">YORAX ACCOUNT</div>
+            <h2 class="welcome-title" id="loginModalTitle">CONNEXION</h2>
+            
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Adresse Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+                </div>
+                <button type="submit" class="btn-primary">SE CONNECTER</button>
+            </form>
+
+            <div class="auth-switch">
+                <span id="switchAuthText">Vous n'avez pas de compte ?</span>
+                <a href="#" id="toggleAuthMode">S'inscrire</a>
+            </div>
         </div>
     </div>
 
-    <!-- 2. Exit Intent Card Modal -->
-    <div class="modal-overlay" id="exitIntentModal">
-        <div class="modal-card exit-card">
-            <button class="modal-close" id="closeExitBtn"><i class="fa-solid fa-xmark"></i></button>
-            <div class="exit-icon"><i class="fa-solid fa-wolf-pack-battalion"></i></div>
-            <h2>THANK YOU FOR VISITING!</h2>
-            <p>Ne partez pas les mains vides. Profitez de pièces exclusives YORAX en édition limitée.</p>
-            <button class="btn-primary" id="continueShoppingBtn">CONTINUER MON SHOPPING</button>
-        </div>
-    </div>
-
-    <!-- 3. Thank You / Order Confirmation Card Modal -->
+    <!-- Thank You Modal -->
     <div class="modal-overlay" id="thankYouModal">
         <div class="modal-card thank-you-card">
             <div class="success-icon-wrap"><i class="fa-solid fa-check"></i></div>
@@ -136,16 +148,14 @@
         </div>
     </div>
 
-    <!-- 4. Large Preview Product Modal -->
+    <!-- Preview Modal -->
     <div class="modal-overlay" id="productPreviewModal">
         <div class="modal-card preview-card">
             <button class="modal-close" id="closePreviewBtn"><i class="fa-solid fa-xmark"></i></button>
             <div class="preview-layout">
                 <div class="preview-gallery">
                     <img id="modalMainImg" src="" alt="Product Main Image">
-                    <div class="gallery-thumbs" id="modalGalleryThumbs">
-                        <!-- Dynamic Thumbnails -->
-                    </div>
+                    <div class="gallery-thumbs" id="modalGalleryThumbs"></div>
                 </div>
                 <div class="preview-details">
                     <span class="preview-sku" id="modalSku">SKU-0000</span>
@@ -155,7 +165,6 @@
                         <span class="original-price" id="modalOriginalPrice">0.00 TND</span>
                     </div>
 
-                    <!-- Size Selection -->
                     <div class="size-selection">
                         <label>TAILLE : <span id="selectedSizeLabel">M</span></label>
                         <div class="size-options">
@@ -165,15 +174,11 @@
                         </div>
                     </div>
 
-                    <!-- Technical Specifications -->
                     <div class="tech-specs">
                         <h4>DÉTAILS TECHNIQUES & KHAMA</h4>
-                        <ul id="modalSpecsList">
-                            <!-- Specs inserted dynamically -->
-                        </ul>
+                        <ul id="modalSpecsList"></ul>
                     </div>
 
-                    <!-- Action Buttons -->
                     <div class="preview-actions">
                         <button class="btn-primary" id="modalAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Ajouter au Panier</button>
                         <button class="btn-whatsapp" id="modalDirectWhatsAppBtn"><i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp</button>
@@ -195,7 +200,6 @@
                 <h4>CONTACT & SOCIAL</h4>
                 <ul class="footer-links">
                     <li><a href="https://instagram.com/yorax.brand" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram: @yorax.brand</a></li>
-                    <li><a href="https://wa.me/21699000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a></li>
                     <li><a href="mailto:contact@yorax.com"><i class="fa-regular fa-envelope"></i> Email: contact@yorax.com</a></li>
                 </ul>
             </div>
@@ -204,7 +208,6 @@
                 <ul class="footer-links">
                     <li><a href="#">Politique de Livraison (7 TND)</a></li>
                     <li><a href="#">Guide des Tailles Oversized</a></li>
-                    <li><a href="#">Conditions Générales</a></li>
                 </ul>
             </div>
         </div>
@@ -213,8 +216,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="index.js"></script>
     <script src="home.js"></script>
 </body>
 </html>
