@@ -9,27 +9,12 @@ const BRAND_PHONE = "56439988"; // بدّل 99000000 برقمك الشخصي
 const productsData = [
     {
         id: "yrx-01",
-        title: "HOODIE OVERSIZED BLACK WOLF",
-        category: "Hoodies",
-        price: 89.00,
-        originalPrice: 110.00,
-        image: "images/products/hoodie-1.jpg",
-        images: ["images/products/hoodie-1.jpg"],
-        specs: [
-            "Coton 100% Ultra-Lourd Premium (400 GSM)",
-            "Coupe Oversized Streetwear",
-            "Impression DTF Haute Qualité YORAX",
-            "Fabriqué en Tunisie"
-        ]
-    },
-    {
-        id: "yrx-02",
-        title: "HOODIE MINIMALIST DARK EDITION",
+        title: "ENJOY THE SILENCE",
         category: "Hoodies",
         price: 95.00,
-        originalPrice: 120.00,
-        image: "images/products/hoodie-2.jpg",
-        images: ["images/products/hoodie-2.jpg"],
+        originalPrice: 130.00,
+        image: "EnjoyTheSilence.jpg",
+        images: ["EnjoyTheSilence.jpg"],
         specs: [
             "Coton Molletonné Épais",
             "Coupe Relaxed / Oversized",
@@ -37,6 +22,38 @@ const productsData = [
         ]
     }
 ];
+
+    {
+        id: "yrx-02",
+        title: "DARK ANGLE",
+        category: "Hoodies",
+        price: 90.00,
+        originalPrice: 160.00,
+        image: "DarkAngle.jpg",
+        images: ["DarkAngle.jpg"],
+        specs: [
+            "Coton Molletonné Épais",
+            "Coupe Relaxed / Oversized",
+            "Design Minimaliste Noir & Blanc"
+        ]
+    }
+];
+   {
+        id: "yrx-03",
+        title: "DEAD INTERNET",
+        category: "Hoodies",
+        price: 80.00,
+        originalPrice: 150.00,
+        image: "DeadInternetBack.jpg",
+        images: ["DeadInternetFace.jpg"],
+        specs: [
+            "Coton Molletonné Épais",
+            "Coupe Relaxed / Oversized",
+            "Design Minimaliste Noir & Blanc"
+        ]
+    }
+];
+
 
 // App State
 let cart = [];
