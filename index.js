@@ -20,10 +20,10 @@ const PRODUCTS_DATABASE = [
         category: "T-Shirts",
         price: 49.00,
         originalPrice: 65.00,
-        mainImage: "assets/mockup/t-shirt/cant't face.jpg",
+        mainImage: "cant't face.png",
         gallery: [
-            "assets/mockup/t-shirt/cant't face.jpg"
-            "assets/mockup/t-shirt/cant't back.jpg",
+            "cant't face.png"
+            "cant't back.png",
             
         ],
         specs: [
@@ -38,12 +38,12 @@ const PRODUCTS_DATABASE = [
         sku: "YRX-HD-01",
         name: "LIFE",
         category: "Hoodies",
-        price: 99.00,
-        originalPrice: 125.00,
-        mainImage: "assets/mockup/t-shirt/life face.jpg",
+        price: 50.00,
+        originalPrice: 100.00,
+        mainImage: "life face.png",
         gallery: [
-            "assets/mockup/t-shirt/life face.jpg",
-            "assets/mockup/t-shirt/life back.jpg"
+            "life face.png",
+            "life back.png"
         ],
         specs: [
             "Grammage : 400 GSM Ultra-dense Fleece",
@@ -58,11 +58,11 @@ const PRODUCTS_DATABASE = [
         name: "SCREAM",
         category: "Sweatshirts",
         price: 79.00,
-        originalPrice: 95.00,
-        mainImage: "assets/mockup/t-shirt/scream face.jpg,"
+        originalPrice: 120.00,
+        mainImage: "scream face.png,"
         gallery: [
-            "assets/mockup/t-shirt/scream face.jpg"
-            "assets/mockup/t-shirt/scream back.jpg"
+            "scream face.png"
+            "scream back.png"
         ],
         specs: [
             "Grammage : 350 GSM Coton Doux",
@@ -77,11 +77,11 @@ const PRODUCTS_DATABASE = [
         name: "SWORD",
         category: "T-Shirts",
         price: 49.00,
-        originalPrice: 60.00,
-        mainImage: "assets/mockup/t-shirt/sword face.jpg",
+        originalPrice: 100.00,
+        mainImage: "sword face.png",
         gallery: [
-            "assets/mockup/t-shirt/sword face.jpg"
-            "assets/mockup/t-shirt/sword back.jpg"
+            "sword face.png"
+            "sword back.png"
         ],
         specs: [
             "Grammage : 240 GSM Heavy Coton Blanc",
