@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YORAX | THE BLACK WOLF STREETWEAR</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Syne & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <span>LIVRAISON PARTOUT EN TUNISIE (7 TND) | FREE SHIPPING SUR LES COMMANDES +150 TND</span>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Brand Logo & Subtitle -->
+            <div class="brand-identity">
+                <a href="#" class="logo-text">YORAX</a>
+                <span class="brand-subtitle">THE BLACK WOLF STREETWEAR</span>
+            </div>
+
+            <!-- Instant Search Bar -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Rechercher un produit, hoodie..." autocomplete="off">
+                <button id="clearSearchBtn" class="clear-search-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <button class="icon-btn" id="cartToggleBtn" title="Mon Panier">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cartCountBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section مع خلفية بطاقة البراند -->
+    <section class="hero-section hero-bg-card">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">YORAX</h1>
+            <p class="hero-subtitle">THE BLACK WOLF STREETWEAR — COLLECTION 2026</p>
+            <p class="hero-tagline">Oversized Aesthetic. Premium Tunisian Craftsmanship.</p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="main-content">
+        <!-- Category Filter Pills (Tous / Hoodies فقط) -->
+        <div class="categories-bar">
+            <button class="category-pill active" data-category="Tous">Tous</button>
+            <button class="category-pill" data-category="Hoodies">Hoodies</button>
+        </div>
+
+        <!-- Product Grid -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>COLLECTION DE SAISON</h2>
+                <span id="productResultsCount" class="results-count">0 Produits</span>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Dynamic Products Loaded via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Slide-over Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3>MON PANIER (<span id="cartDrawerCount">0</span>)</h3>
+            <button class="close-btn" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-drawer-items" id="cartItemsContainer">
+            <!-- Dynamic Cart Items -->
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="summary-line">
+                <span>Sous-total:</span>
+                <span id="cartSubtotalText">0.00 TND</span>
+            </div>
+            <div class="summary-line">
+                <span>Frais de livraison:</span>
+                <span id="cartShippingText">7.00 TND</span>
+            </div>
+            <div class="summary-line total-line">
+                <span>TOTAL ESTIMÉ:</span>
+                <span id="cartTotalText">7.00 TND</span>
+            </div>
+            <button class="checkout-whatsapp-btn" id="whatsappCheckoutBtn">
+                <i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- 1. Welcome Card Overlay Modal -->
+    <div class="modal-overlay" id="welcomeModal">
+        <div class="modal-card welcome-card">
+            <button class="modal-close" id="closeWelcomeBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="welcome-badge">WELCOME TO YORAX</div>
+            <h2 class="welcome-title">THE BLACK WOLF</h2>
+            <p class="welcome-text">Découvrez notre nouvelle collection streetwear minimaliste & oversized 2026.</p>
+            <button class="btn-primary" id="exploreCollectionBtn">EXPLORE COLLECTION</button>
+        </div>
+    </div>
+
+    <!-- 2. Exit Intent Card Modal -->
+    <div class="modal-overlay" id="exitIntentModal">
+        <div class="modal-card exit-card">
+            <button class="modal-close" id="closeExitBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="exit-icon"><i class="fa-solid fa-wolf-pack-battalion"></i></div>
+            <h2>THANK YOU FOR VISITING!</h2>
+            <p>Ne partez pas les mains vides. Profitez de pièces exclusives YORAX en édition limitée.</p>
+            <button class="btn-primary" id="continueShoppingBtn">CONTINUER MON SHOPPING</button>
+        </div>
+    </div>
+
+    <!-- 3. Thank You / Order Confirmation Card Modal -->
+    <div class="modal-overlay" id="thankYouModal">
+        <div class="modal-card thank-you-card">
+            <div class="success-icon-wrap"><i class="fa-solid fa-check"></i></div>
+            <h2>ARTICLE AJOUTÉ !</h2>
+            <p id="thankYouMessage">Votre article a été ajouté avec succès au panier YORAX.</p>
+            <button class="btn-secondary" id="closeThankYouBtn">CONTINUER</button>
+        </div>
+    </div>
+
+    <!-- 4. Large Preview Product Modal -->
+    <div class="modal-overlay" id="productPreviewModal">
+        <div class="modal-card preview-card">
+            <button class="modal-close" id="closePreviewBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="preview-layout">
+                <div class="preview-gallery">
+                    <img id="modalMainImg" src="" alt="Product Main Image">
+                    <div class="gallery-thumbs" id="modalGalleryThumbs">
+                        <!-- Dynamic Thumbnails -->
+                    </div>
+                </div>
+                <div class="preview-details">
+                    <span class="preview-sku" id="modalSku">SKU-0000</span>
+                    <h2 class="preview-title" id="modalTitle">Nom du produit</h2>
+                    <div class="preview-prices">
+                        <span class="current-price" id="modalPrice">0.00 TND</span>
+                        <span class="original-price" id="modalOriginalPrice">0.00 TND</span>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="size-selection">
+                        <label>TAILLE : <span id="selectedSizeLabel">M</span></label>
+                        <div class="size-options">
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn active" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                        </div>
+                    </div>
+
+                    <!-- Technical Specifications -->
+                    <div class="tech-specs">
+                        <h4>DÉTAILS TECHNIQUES & KHAMA</h4>
+                        <ul id="modalSpecsList">
+                            <!-- Specs inserted dynamically -->
+                        </ul>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="preview-actions">
+                        <button class="btn-primary" id="modalAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Ajouter au Panier</button>
+                        <button class="btn-whatsapp" id="modalDirectWhatsAppBtn"><i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-logo">YORAX</h3>
+                <p class="footer-sub">THE BLACK WOLF STREETWEAR</p>
+                <p class="footer-desc">Marque tunisienne de vêtements streetwear haut de gamme au style minimaliste sombre et coupes oversized.</p>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT & SOCIAL</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/yorax.brand" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram: @yorax.brand</a></li>
+                    <li><a href="https://wa.me/21699000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a></li>
+                    <li><a href="mailto:contact@yorax.com"><i class="fa-regular fa-envelope"></i> Email: contact@yorax.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>INFORMATIONS</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Politique de Livraison (7 TND)</a></li>
+                    <li><a href="#">Guide des Tailles Oversized</a></li>
+                    <li><a href="#">Conditions Générales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 YORAX (THE BLACK WOLF STREETWEAR). Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="index.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>
