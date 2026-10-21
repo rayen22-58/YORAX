@@ -126,6 +126,12 @@ body {
 }
 
 /* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .icon-btn {
     background: none;
     border: none;
@@ -157,7 +163,7 @@ body {
     position: relative;
     padding: 120px 20px;
     text-align: center;
-    background-image: url('assets/logo/RY.png'); /* اسم تصويرة بطاقة البراند */
+    background-image: url('images/yorax-card.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -419,30 +425,45 @@ body {
     cursor: pointer;
 }
 
-/* Welcome & Exit Cards */
-.welcome-badge {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: var(--text-muted);
-    margin-bottom: 10px;
+/* Login Modal */
+.login-card {
+    max-width: 420px;
 }
 
-.welcome-title {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    letter-spacing: 4px;
-    margin-bottom: 15px;
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.welcome-text, .exit-card p {
+.form-group input {
+    width: 100%;
+    background-color: var(--bg-black);
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    border-radius: 4px;
+    color: var(--text-white);
     font-size: 13px;
-    color: #ccc;
-    margin-bottom: 25px;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
-.exit-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+.form-group input:focus {
+    border-color: var(--text-white);
+}
+
+.auth-switch {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.auth-switch a {
+    color: var(--text-white);
+    text-decoration: underline;
+    margin-left: 5px;
+    font-weight: 600;
 }
 
 /* Thank You Card */
@@ -547,7 +568,6 @@ body {
     text-decoration: line-through;
 }
 
-/* Size Selection */
 .size-selection {
     margin-bottom: 20px;
 }
@@ -582,7 +602,6 @@ body {
     color: var(--bg-black);
 }
 
-/* Tech Specs */
 .tech-specs {
     border-top: 1px solid var(--border-color);
     padding-top: 15px;
@@ -615,7 +634,6 @@ body {
     color: var(--text-muted);
 }
 
-/* Action Buttons */
 .btn-primary {
     background-color: var(--text-white);
     color: var(--bg-black);
@@ -779,6 +797,28 @@ body {
     background-color: var(--bg-black);
 }
 
+.checkout-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.checkout-fields input {
+    width: 100%;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-white);
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    outline: none;
+}
+
+.checkout-fields input:focus {
+    border-color: var(--text-white);
+}
+
 .summary-line {
     display: flex;
     justify-content: space-between;
@@ -810,7 +850,7 @@ body {
     border-radius: 4px;
 }
 
-/* Footer Styles */
+/* Footer */
 .main-footer {
     background-color: #050505;
     border-top: 1px solid var(--border-color);
@@ -879,7 +919,7 @@ body {
     color: var(--text-muted);
 }
 
-/* Responsive Styles */
+/* Responsive Styles for Mobile */
 @media (max-width: 900px) {
     .preview-layout {
         grid-template-columns: 1fr;
@@ -900,7 +940,35 @@ body {
     .search-box {
         max-width: 100%;
     }
+
+    .preview-card {
+        width: 95% !important;
+        max-height: 88vh !important;
+        overflow-y: auto !important;
+        margin: 10px auto !important;
+    }
+
+    .preview-details {
+        padding: 20px 15px !important;
+    }
+
+    .btn-primary, .btn-whatsapp, .checkout-whatsapp-btn {
+        padding: 16px !important;
+        font-size: 14px !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
     .cart-drawer {
-        width: 100%;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .cart-drawer-footer {
+        position: sticky;
+        bottom: 0;
+        background-color: var(--bg-black);
+        padding: 15px !important;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.8);
     }
 }
